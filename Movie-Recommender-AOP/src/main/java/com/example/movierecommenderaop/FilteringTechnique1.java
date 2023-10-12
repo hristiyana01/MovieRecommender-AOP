@@ -1,6 +1,6 @@
 package com.example.movierecommenderaop;
 
-import dataLayer.Movie;
+import com.example.movierecommenderaop.dataLayer.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

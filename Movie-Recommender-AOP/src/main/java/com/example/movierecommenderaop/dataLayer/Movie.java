@@ -1,4 +1,4 @@
-package dataLayer;
+package com.example.movierecommenderaop.dataLayer;
 
 import org.springframework.stereotype.Repository;
 
