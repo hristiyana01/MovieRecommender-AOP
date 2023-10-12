@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 @Aspect
 @Configuration
 public class ExecutionTimeAspect {
-
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    @Around("execution(* com.example.movierecommenderaop..*.*(..))")
-    public Object calculateExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable{
+
+        @Around("com.example.movierecommenderaop.aspect.JoinPointConfig.measureTimeAnnotation()")
+        public Object calculateExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
 
         long startTime = System.currentTimeMillis();
 
@@ -21,7 +21,7 @@ public class ExecutionTimeAspect {
 
         long timeTaken = System.currentTimeMillis() - startTime;
 
-        logger.info("Time taken by {} to complete execution is: {}", joinPoint, timeTaken);
+        logger.info("\\n\\n>>Time taken by {} to complete execution is: {}\n", joinPoint, timeTaken);
         return returnValue;
     }
 }
